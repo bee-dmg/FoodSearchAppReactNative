@@ -35,7 +35,7 @@ let scaleValue = new Animated.Value(0)
       }}
     ><Image style={{height:200, width:200}} source={papaj} /></TouchableWithoutFeedback>
       <TouchableOpacity onPress={()=>setBoop(!boop)}>
-      {!boop ? <Image style={{height:200, width:200}} source={papaj} /> : <Animated.Text style={styles.pastajohn}>Hello I'm Pasta John</Animated.Text>}
+      {!boop ? <Image style={{height:200, width:200}} source={papaj} /> : <Animated.Text style={styles.pastajohn}>Hello I'm Pasta Jawn</Animated.Text>}
       
       </TouchableOpacity><StatusBar style="auto" />
     </View>
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   pastajohn:{
-transform:[{scale:200,}]
+
   },
   
 });
