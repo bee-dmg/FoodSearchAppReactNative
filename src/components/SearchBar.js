@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
   background: {
     marginTop: 10,
     backgroundColor: "#F0EEEE",
+    marginBottom:10,
     height: 50,
     borderRadius: 5,
     marginHorizontal: 15,

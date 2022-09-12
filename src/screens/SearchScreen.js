@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 import Yelp from "../api/Yelp";
 import SearchBar from "../components/SearchBar";
 import useResults from "../hooks/useResults";
@@ -16,19 +16,31 @@ const SearchScreen = () => {
     });
   };
   return (
-    <View>
+    <>
+      {/* set flex to 1 so it fits android screens, adding flex 1 helps if content is cut off to the most parent view */}
       <SearchBar
         term={term}
         onTermChange={setTerm}
         onTermSubmit={() => searchApi(term)}
       />
       {errorMessage ? <Text>{errorMessage}</Text> : null}
-      <Text>We have found {results.length} results.</Text>
-      <ResultsList results={filterResultsByPrice('$')} title="Cost Effective" />
-      <ResultsList results={filterResultsByPrice('$$')}title="Bit Pricier" />
-      <ResultsList results={filterResultsByPrice('$$$')} title="Big Spender!" />
-      <ResultsList results={filterResultsByPrice('$$$$')} title="Biggest Spender!" />
-    </View>
+      
+      <ScrollView>
+        <ResultsList
+          results={filterResultsByPrice("$")}
+          title="Cost Effective"
+        />
+        <ResultsList results={filterResultsByPrice("$$")} title="Bit Pricier" />
+        <ResultsList
+          results={filterResultsByPrice("$$$")}
+          title="Big Spender!"
+        />
+        <ResultsList
+          results={filterResultsByPrice("$$$$")}
+          title="Biggest Spender!"
+        />
+      </ScrollView>
+    </>
   );
 };
 
