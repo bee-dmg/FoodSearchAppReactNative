@@ -17,13 +17,14 @@ const styles = StyleSheet.create({
         width:250,
         height:120,
         borderRadius:4,
+        marginBottom:5,
     },
     name:{
         fontWeight:'bold',
      
     },
     container:{
-        marginLeft:10,
+        marginLeft:15,
     }
 });
 
